@@ -1,0 +1,8 @@
+POST  127.0.0.1:3000/register
+content-type: application/json
+
+{
+    "name": "Victor",
+    "email": "ukokjnr@gmail.com",
+    "password": "password"
+}
