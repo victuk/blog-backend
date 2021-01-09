@@ -1,8 +1,6 @@
-POST  127.0.0.1:3000/register
+get   https://intense-temple-44969.herokuapp.com/
 content-type: application/json
 
 {
-    "name": "Victor",
-    "email": "ukokjnr@gmail.com",
-    "password": "password"
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmZjkwYWM3NjdlNTQ4MDAyNGUyNGQ3NSIsImlhdCI6MTYxMDE1Njc2Mn0.jyFGKdwAqVQXq_BdBe8v0XlYUQcMs7T8gHG7tHUwIYQ"
 }

@@ -18,3 +18,6 @@ edits a single blog post with the id passed as a parameter
 
 DELETE /:id
 deletes a single blog post with the id passed as a parameter
+
+GET /users/profile
+gets the user's profile details
