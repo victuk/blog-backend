@@ -31,6 +31,8 @@ router.post('/', (req, res) => {
                 });
             }
         });
+    } else {
+        res.send('You need to imput a valid username and password.');
     }
 });
 

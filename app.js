@@ -21,7 +21,7 @@ var loginRouter = require('./routes/login');
 require('dotenv').config();
 var app = express();
 
-mongoose.connect('mongodb+srv://ukokjnr:mfreke@cluster0.c58tr.mongodb.net/blogapp', { useNewUrlParser: true, useUnifiedTopology: true}, function(err) {
+mongoose.connect(process.env.mongoConnection, { useNewUrlParser: true, useUnifiedTopology: true}, function(err) {
   if(err) {console.log(err)}
   else {console.log("Connected")}
 });

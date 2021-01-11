@@ -6,6 +6,7 @@ const RegisterSchema = new Schema({
     name: String,
     email: String,
     password: String,
+    status: {type: String, default: 'Hi there, i blog, i\'ll like you to see my blog posts'},
     role: {type: String, default: 'user'}
 });
 

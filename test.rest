@@ -1,6 +1,10 @@
-get   https://intense-temple-44969.herokuapp.com/
-content-type: application/json
+GET   http://127.0.0.1:3000/
+content-type: application/json,
+token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVlODUwMzlkZjhiZjY5MmEwOGQ5ODNiMiIsImlhdCI6MTU4NTc3NTUzMX0.kzyO-W3sNC8R5FZHKWz5v_-Q-bUqToNNAQlALTzc7QA
 
 {
-    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmZjkwYWM3NjdlNTQ4MDAyNGUyNGQ3NSIsImlhdCI6MTYxMDE1Njc2Mn0.jyFGKdwAqVQXq_BdBe8v0XlYUQcMs7T8gHG7tHUwIYQ"
+    "name":"Victorred",
+    "password":"victorred",
+    "updateStatus": "It's late at night tho"
 }
+

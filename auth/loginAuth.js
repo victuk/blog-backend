@@ -4,7 +4,7 @@ require('dotenv').config();
 jwtOptions.secretOrKey = process.env.secretkey;
 
 function authLogin(req, res, next){
-    const token = req.body.token || req.header.token;
+    const token = req.body.token || req.headers.token;
     if(token){
         jwt.verify(token, jwtOptions.secretOrKey, function(err, decoded){
             if(err){
