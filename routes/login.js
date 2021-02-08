@@ -32,7 +32,7 @@ router.post('/', (req, res) => {
             }
         });
     } else {
-        res.send('You need to imput a valid username and password.');
+        res.json({message: 'You need to input a valid username and password.'});
     }
 });
 

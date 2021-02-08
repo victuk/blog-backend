@@ -1,8 +1,9 @@
-GET   http://127.0.0.1:3000/
-content-type: application/json,
-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVlODUwMzlkZjhiZjY5MmEwOGQ5ODNiMiIsImlhdCI6MTU4NTc3NTUzMX0.kzyO-W3sNC8R5FZHKWz5v_-Q-bUqToNNAQlALTzc7QA
+PUT  http://127.0.0.1:4000/users/edit-status
+content-type: application/json
+token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwMGI1ODc5NDZiOTE0MWE0NDJiMDQzNyIsImlhdCI6MTU4NTc2NjQ4M30.M75m14L9jJ2q-Es7c-EIOl0ZZTqTOaX2ETNpacM7PNo
 
 {
+    "email": "victor@victor.com",
     "name":"Victorred",
     "password":"victorred",
     "updateStatus": "It's late at night tho"

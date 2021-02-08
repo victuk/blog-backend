@@ -7,6 +7,7 @@ var cors = require('cors');
 var mongoose = require('mongoose');
 var jwt = require('jsonwebtoken');
 var passport = require('passport');
+var bodyParser = require('body-parser')
 const passportJWT = require('passport-jwt');
 const ExtractJwt = passportJWT.ExtractJwt;
 const JwtStrategy = passportJWT.Strategy;
@@ -36,8 +37,12 @@ app.set('view engine', 'jade');
 
 app.use(cors());
 app.use(logger('dev'));
-app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({ extended: false }))
+ 
+// parse application/json
+app.use(bodyParser.json());
+app.use(express.json());
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 

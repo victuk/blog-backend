@@ -29,16 +29,16 @@ router.post('/', function (req, res) {
                         message: 'Something went wrong!'
                     })
                 }
-                res.send({ user });
+                res.json({ message: 'ok', user });
             });
         } else {
-            res.send("This email is already used");
+            res.json({message: "This email is already used"});
         } 
     });
     
 
 } else {
-    res.send('Your input details are not complete.');
+    res.json({message: 'Your input details are not complete.'});
 }
     
 });

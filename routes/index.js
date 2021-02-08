@@ -9,7 +9,7 @@ const hasAccess = require('../auth/accessControl')
 
 /* GET home page. */
 router.get('/', authLogin, function(req, res) {
-    Blog.find({}, 'blogHead blogBody userID', function(error, blogs) {
+    Blog.find({}, 'blogHead blogBody userID postDate', function(error, blogs) {
       if(error) {console.log(error)}
       res.json({
         blogs,
@@ -31,29 +31,32 @@ router.get('/view-blogger-profile/:id', authLogin, function(req, res) {
   })
 });
 
+
 router.post('/', authLogin, function(req, res) {
   if (req.body.blogbody && req.body.bloghead) {
     const post = new Blog({
       userID: req.decoded.id,
       blogHead: req.body.bloghead,
-      blogBody: req.body.blogbody
+      blogBody: req.body.blogbody,
+      postDate: Date.now()
     });
       post.save(function(error, post) {
       if(error) {console.log(error)}
-      res.send("This Saved Successfully");
+      res.json({message: 'ok', reply:"This Saved Successfully"});
     });
   } else {
-    res.send('Your input details are not complete.');
+    res.json({message:'Your input details are not complete.'});
 }
 });
 
 router.get('/single-blog/:id', authLogin, function(req, res){
-  Blog.find({id: req.params.id}, 'blogHead blogBody', function(error, blog){
+  // return console.log(req.params.id);
+  Blog.findById(req.params.id, function(error, blog){
     if(error) {console.log(error)}
-    if(blog == '') {
-      res.send('Blog dosent exist')
+    if(blog == null) {
+      res.json({message:'Blog dosent exist'})
     } else {
-      res.send(blog)
+      res.json({message: 'ok', blog})
     }
   })
 });
@@ -68,11 +71,11 @@ router.put('/edit-blog/:id', authLogin, hasAccess, function(req, res) {
     
     blogs.save(function(error, blogs) {
       if(error) {console.log(error)}
-      res.send(blogs)
+      res.send({message: 'ok', blogs})
     });
   })
 }  else {
-  res.send('Your input details are not complete.');
+  res.send({message: 'Your input details are not complete.'});
 }
 });
 
@@ -81,7 +84,7 @@ router.put('/edit-blog/:id', authLogin, hasAccess, function(req, res) {
 router.delete('/:id', authLogin, hasAccess, function(req, res) {
   Blog.findOneAndDelete(req.params.id, function(error, doc) {
     if(error) {console.log(error)}
-    res.send(doc);
+    res.json({message: "ok", doc});
   })
 });
 

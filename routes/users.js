@@ -22,11 +22,11 @@ router.put('/edit-status', authLogin, function(req, res) {
     
     blogs.save(function(error, blogs) {
       if(error) {console.log(error)}
-      res.send(blogs)
+      res.json({message: 'ok', blogs})
     });
   })
 }  else {
-  res.send('Your type in a valid status.');
+  res.json({message:'Your type in a valid status.'});
 }
 });
 
