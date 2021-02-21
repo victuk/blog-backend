@@ -1,8 +1,10 @@
-PUT  http://127.0.0.1:4000/users/edit-status
+GET  http://127.0.0.1:4000/
 content-type: application/json
 token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwMGI1ODc5NDZiOTE0MWE0NDJiMDQzNyIsImlhdCI6MTU4NTc2NjQ4M30.M75m14L9jJ2q-Es7c-EIOl0ZZTqTOaX2ETNpacM7PNo
 
 {
+    "bloghead":"sample1",
+    "blogbody":"sample2",
     "email": "victor@victor.com",
     "name":"Victorred",
     "password":"victorred",

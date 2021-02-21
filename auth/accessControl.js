@@ -8,9 +8,11 @@ const theroles = {
 
 function hasAccess(req, res, next){
 
+    
 
-        Blog.findById(req.params.id, function(err, blog) {
-            if(err) {console.log(error)}
+        Blog.findById(req.params.id, function(error, blog) {
+            if(error) {console.log(error)}
+
             if(req.decoded.id == blog.userID) {
                 next();
             } else {
