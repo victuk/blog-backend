@@ -81,7 +81,7 @@ router.put('/edit-blog/:id', authLogin, hasAccess, function(req, res) {
 
 
 
-router.delete('/:id', authLogin, hasAccess, function(req, res) {
+router.delete('delete-single-blog/:id', authLogin, hasAccess, function(req, res) {
   Blog.deleteOne({_id: req.params.id}, function(error, doc) {
     if(error) {console.log(error)}
     res.json({message: "ok", doc});
